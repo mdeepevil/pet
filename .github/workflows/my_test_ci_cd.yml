@@ -2,7 +2,9 @@ name: CI-CD-pipe-to-AWS
 env:
   AWS_S3_BUCKET_NAME  : "pet-clinic-task"
   EB_APP_NAME         : "pet-clinic"
-  EB_ENVIRONMENT_NAME : "pet-clinic-env"
+  EB_ENVIRONMENT_NAME : "petclinic-env"
+  DEPLOYMENT_PACK_NAME: "pet_cl_${{ github.sha }}.zip"
+  AWS_REGION          : "eu-west-1"
 
 on: 
   push:
