@@ -1,4 +1,8 @@
-name: CI
+name: CI-CD-pipe-to-AWS
+env:
+  AWS_S3_BUCKET_NAME  : "pet-clinic-task"
+  EB_APP_NAME         : "pet-clinic"
+  EB_ENVIRONMENT_NAME : "pet-clinic-env"
 
 on: 
   push:
@@ -6,8 +10,7 @@ on:
       - master
 
 jobs:
-  build:
-
+  ci_part:
     runs-on: ubuntu-latest
 
     steps:
