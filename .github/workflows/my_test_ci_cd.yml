@@ -28,3 +28,9 @@ jobs:
         aws-access-key-id     : ${{ secrets.AWS_ACCESS_KEY }}
         aws-secret-access-key : ${{ secrets.AWS_SECRET_KEY }}
         aws-region            : ${{ env.AWS_REGION }} 
+
+    - name: Copy package to S3
+      run : |
+             aws s3 cp ${{ env.DEPLOYMENT_PACK_NAME }} s3://${{ env.AWS_S3_BUCKET_NAME }}/
+             echo "CI part finished successfully!"
+      
